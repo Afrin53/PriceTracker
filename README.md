@@ -44,3 +44,61 @@
 ```bash
 git clone https://github.com/Afrin53/PriceTracker.git
 cd PriceTracker
+ Set Up Backend
+bash
+Copy
+Edit
+cd backend/
+npm install
+# Create a .env file (refer to .env.example)
+npm run start
+3. Set Up Frontend
+bash
+Copy
+Edit
+cd ../frontend/
+npm install
+npm run dev
+Open http://localhost:3000 in your browser.
+Folder Structure
+php
+Copy
+Edit
+PriceWise/
+├── frontend/              # Next.js frontend
+│   ├── app/               # App router pages
+│   ├── components/        # UI components like Navbar, ProductCard, Chart
+│   └── styles/            # Tailwind/global CSS
+├── backend/               # Node.js scraping & API server
+│   ├── routes/            # API routes (scrape, add product, etc.)
+│   ├── models/            # Mongoose schemas
+│   └── utils/             # Web scraping functions
+├── notifications/         # Email alert logic (Nodemailer)
+├── public/                # Static assets
+├── .env.example           # Environment variable template
+└── README.md              # Project documentation
+🔧 Core Functions
+Function	Description
+scrapePrice()	Extracts latest price from product page
+savePrice()	Saves price and timestamp to MongoDB
+sendEmailAlert()	Sends email if price drops
+drawChart()	Renders price history with Chart.js
+
+🔄 Workflow
+User adds product URL to track.
+
+System scrapes price and stores it with date.
+
+Frontend displays the trend graph.
+
+If price drops, email is automatically sent.
+
+⏱ Complexity
+Time: O(n) for chart rendering, where n = price history entries
+
+Space: O(n), where n = tracked price points
+
+📌 Tags
+#NextJS #PriceTracker #WebScraping #FullStack #NodeJS #MongoDB #ChartJS #TailwindCSS #InternshipProject
+
+
